@@ -10,7 +10,9 @@ const app = express();
 
 // connect to MongoDB
 const connectionURI = "mongodb+srv://demo:demo123@pokemontest.l9np2.mongodb.net/node-pokemon?retryWrites=true&w=majority";
-mongoose.connect(connectionURI);
+mongoose.connect(connectionURI, {useNewUrlParser: true, useUnifiedTopology: true})
+    .then((result) => console.log('Connected to Database...'))
+    .catch((err) => console.log(err))
 
 // listen for requests
 const PORT = 5000;
