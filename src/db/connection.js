@@ -1,9 +1,15 @@
-// import mongoose from 'mongoose';
-// require("dotenv").config();
+import mongoose from 'mongoose';
+require("dotenv").config();
 
-// connect to MongoDB
-// const connectionURI = "mongodb+srv://demo:demo123@pokemontest.l9np2.mongodb.net/node-pokemon?retryWrites=true&w=majority";
-// mongoose.connect(connectionURI, {useNewUrlParser: true, useUnifiedTopology: true})
-//     .then((result) => console.log('Connected to Database...'))
-//     .catch((err) => console.log(err))
+const connection = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log("Connected to Database");
+    } catch (error) {
+        console.log(error);
+    }
+};
 
+connection();
+
+// NOT WORKING // 
