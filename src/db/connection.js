@@ -1,10 +1,12 @@
-import mongoose from 'mongoose';
-require("dotenv").config();
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 const connection = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
-        console.log("Connected to Database");
+        console.log("Connected to Database...");
     } catch (error) {
         console.log(error);
     }
@@ -12,4 +14,3 @@ const connection = async () => {
 
 connection();
 
-// NOT WORKING // 

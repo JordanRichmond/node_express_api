@@ -1,7 +1,5 @@
 import express from 'express';
-import bodyParser from 'body-parser';
-// import mongoose from 'mongoose';
-
+import './src/db/connection.js';
 import usersRoutes from './src/routes/users.js';
 
 
@@ -17,7 +15,7 @@ const app = express();
 // listen for requests
 const PORT = 5000;
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.use('/users', usersRoutes);
 
