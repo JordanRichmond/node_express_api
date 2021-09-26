@@ -13,4 +13,3 @@ const connection = async () => {
 };
 
 connection();
-
